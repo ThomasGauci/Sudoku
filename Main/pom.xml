@@ -28,6 +28,16 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>gauci.sudoku.app</groupId>
+      <artifactId>GUI</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>gauci.sudoku.app</groupId>
+      <artifactId>IO</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
 
   <build>
