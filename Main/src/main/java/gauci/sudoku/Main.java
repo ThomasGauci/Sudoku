@@ -13,10 +13,12 @@ public class Main
 
     public static void main( String[] args ){
         Gui gui = new Gui();
-        //Gui io = new Io();
+        Io io = new Io();
         grille = new int[9][9];
         String str;
 
+        grille = io.lire();
+        io.ecrire("test.txt",grille);
         for(int i=0 ; i<6; i++){
             gui.afficherGrille(grille);
             str = gui.recupClavier();
