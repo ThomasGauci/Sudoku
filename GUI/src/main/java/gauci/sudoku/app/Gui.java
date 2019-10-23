@@ -57,5 +57,8 @@ public class Gui
         //else if(str = [1-9]{3})
         return str;
     }
-
+        
+    public static void erreur(){
+        System.out.println("Mauvais placement du chiffre");
+    }
 }

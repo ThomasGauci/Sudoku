@@ -43,7 +43,6 @@ public class Io
       }
       return grille;
     }
-
     public static void ecrire(String name,int grille[][])
     {
       String content ="";
