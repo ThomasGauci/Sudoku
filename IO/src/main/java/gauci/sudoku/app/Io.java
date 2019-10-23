@@ -3,6 +3,7 @@ package gauci.sudoku.app;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -43,6 +44,39 @@ public class Io
       }
       return grille;
     }
+    public static int[][] lire(String path)
+    {
+      int grille[][] = new int[9][9];
+      try{
+        FileReader file =  new FileReader(path);
+        //InputStream file = Io.class.getResourceAsStream("/grille1.txt");
+        //BufferedReader buff=new BufferedReader(new InputStreamReader(file));
+        int nb;
+        int col = 0;
+        int row  = 0;
+        while ((nb=file.read())!=-1){
+          if(Character.isDigit(nb) || (char)nb =='_'){
+            if(col == 9){
+              row++;
+              col = 0;
+            }
+          if((char)nb =='_'){
+            grille[row][col]=0;
+          }else{
+            char tmp = (char)nb;
+            grille[row][col]=Character.getNumericValue(tmp);
+          }
+          col++;
+          }
+        }
+        file.close(); 
+      }		
+      catch (Exception e){
+        System.out.println(e.toString());
+      }
+      return grille;
+    }
+
     public static void ecrire(String name,int grille[][])
     {
       String content ="";

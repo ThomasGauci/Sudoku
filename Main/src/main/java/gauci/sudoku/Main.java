@@ -19,7 +19,7 @@ public class Main
         String str;
         boolean coup;
 
-        grille = io.lire();
+        grille = io.lire("/Users/thomasgauci/Desktop/bab.txt");
         io.ecrire("test.txt",grille);
         while(true){
             gui.afficherGrille(grille);
