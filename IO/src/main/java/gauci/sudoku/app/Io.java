@@ -44,6 +44,7 @@ public class Io
       }
       return grille;
     }
+
     public static int[][] lire(String path)
     {
       int grille[][] = new int[9][9];
@@ -92,7 +93,7 @@ public class Io
           }
         }
       }
-      try (FileWriter writer = new FileWriter(name);
+      try (FileWriter writer = new FileWriter(name+".txt");
 		  BufferedWriter bw = new BufferedWriter(writer)) {
         bw.write(content);
       } catch (IOException e) {

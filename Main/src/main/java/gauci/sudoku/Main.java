@@ -16,19 +16,33 @@ public class Main
         Gui gui = new Gui();
         Io io = new Io();
         grille = new int[9][9];
-        String str;
+        String mots[];
         boolean coup;
 
-        grille = io.lire("/Users/thomasgauci/Desktop/bab.txt");
-        io.ecrire("test.txt",grille);
+        grille = io.lire();
         while(true){
             gui.afficherGrille(grille);
-            str = gui.recupClavier();
-            coup = validationCoup(str);
-            if(coup){
-                ajouter(str);
+            mots = gui.recupClavier();
+            if(mots[0].equals("save")){
+                // Ajouter nom de la grille -save grille90
+                io.ecrire(mots[1],grille);
+            }
+            if(mots[0].equals("load") || mots[0].equals("save")){
+                if(mots[0].equals("save")){
+                    // Ajouter nom de la grille -save grille90
+                    io.ecrire(mots[1],grille);
+                }
+                if(mots[0].equals("load")){
+                    // Ajouter nom et chemin  -load /test/pil.txt
+                    grille = io.lire(mots[1]);
+                }
             }else{
-                gui.erreur();
+                coup = validationCoup(mots[0]);
+                if(coup){
+                    ajouter(mots[0]);
+                }else{
+                    gui.erreur();
+                }
             }
         }
     }
