@@ -8,6 +8,7 @@ import java.lang.Math;
  */
 // clear && mvn install && cd Main && mvn exec:java && cd ..
 public class Main 
+
 {
     private static int grille[][];
     private static int tour;
@@ -19,29 +20,37 @@ public class Main
         String mots[];
         boolean coup;
 
-        grille = io.lire();
+        if(args[0]!=null){
+            grille = io.lire(args[0]);
+        }else{
+            grille = io.lire();
+        }
         while(true){
             gui.afficherGrille(grille);
             mots = gui.recupClavier();
-            if(mots[0].equals("save")){
-                // Ajouter nom de la grille -save grille90
-                io.ecrire(mots[1],grille);
-            }
-            if(mots[0].equals("load") || mots[0].equals("save")){
-                if(mots[0].equals("save")){
-                    // Ajouter nom de la grille -save grille90
-                    io.ecrire(mots[1],grille);
-                }
-                if(mots[0].equals("load")){
-                    // Ajouter nom et chemin  -load /test/pil.txt
-                    grille = io.lire(mots[1]);
-                }
-            }else{
-                coup = validationCoup(mots[0]);
-                if(coup){
-                    ajouter(mots[0]);
+            if(gui.verifClavier(mots)){
+                if(mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help")){
+                    if(mots[0].equals("save")){
+                        // Ajouter nom de la grille -save grille90
+                        io.ecrire(mots[1],grille);
+                    }
+                    if(mots[0].equals("load")){
+                        // Ajouter nom et chemin  -load /test/pil.txt
+                        grille = io.lire(mots[1]);
+                    }
+                    if(mots[0].equals("exit")){
+                        System.exit(0);
+                    }
+                    if(mots[0].equals("help")){
+                        gui.help();
+                    }
                 }else{
-                    gui.erreur();
+                    coup = validationCoup(mots[0]);
+                    if(coup){
+                        ajouter(mots[0]);
+                    }else{
+                        gui.erreur();
+                    }
                 }
             }
         }
