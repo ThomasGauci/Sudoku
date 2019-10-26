@@ -9,7 +9,6 @@
   <artifactId>Sudoku</artifactId>
     
   <version>1.0</version>
-    
   <packaging>pom</packaging>
           
   
@@ -90,14 +89,6 @@
         
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
                                 
-        <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
-        <configuration>
-          <mainClass>gauci.sudoku.app.Main</mainClass>
-        </configuration>
-      </plugin>
 
         
         <plugin>
@@ -227,7 +218,6 @@
           <version>3.0.0</version>
                   
         </plugin>
-              
       </plugins>
           
     </pluginManagement>

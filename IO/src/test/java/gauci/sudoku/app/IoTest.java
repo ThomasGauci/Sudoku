@@ -1,13 +1,15 @@
 package gauci.sudoku.app;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+
+import java.beans.Transient;
 
 import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class IoTest 
 {
     /**
      * Rigorous Test :-)
@@ -17,4 +19,9 @@ public class AppTest
     {
         assertTrue( true );
     }
+/*
+    @Test
+    public static int[][] lire(){
+        
+    }*/
 }
