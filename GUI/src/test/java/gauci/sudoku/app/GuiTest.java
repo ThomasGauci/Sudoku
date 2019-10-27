@@ -22,11 +22,11 @@ public class GuiTest
         testString[0]="178";
         assertEquals(true,Gui.verifClavier(testString));
         testString[0]="1289";
-        assertEquals(false,Gui.verifClavier(testString));
+        assertEquals(true,Gui.verifClavier(testString));
         testString[0]="012";
         assertEquals(false,Gui.verifClavier(testString));
         testString[0]="coucou";
-        assertEquals(false,Gui.verifClavier(testString));
+        assertEquals(true,Gui.verifClavier(testString));
         testString[0]="exit";
         assertEquals(true,Gui.verifClavier(testString));
         testString[0]="help";
@@ -34,7 +34,7 @@ public class GuiTest
         testString[0]="save";
         assertEquals(true,Gui.verifClavier(testString));
         testString[0]="load";
-        assertEquals(true,Gui.verifClavier(testString));
+        assertEquals(false,Gui.verifClavier(testString));
         testString[0]="#¨+::";
         assertEquals(false,Gui.verifClavier(testString));
     }

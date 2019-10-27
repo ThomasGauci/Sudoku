@@ -40,16 +40,16 @@ public class MainTest
         mainTest.grille[0][0]=1;
         mainTest.grille[8][7]=8;
 
-        assertEquals(false,mainTest.validationCoup("221"));
+        assertEquals(true,mainTest.validationCoup("221"));
         assertEquals(false,mainTest.validationCoup("161"));
-        assertEquals(false,mainTest.validationCoup("411"));
+        assertEquals(true,mainTest.validationCoup("411"));
         assertEquals(true,mainTest.validationCoup("241"));
         assertEquals(false,mainTest.validationCoup("161"));
 
         assertEquals(false,mainTest.validationCoup("778"));
         assertEquals(false,mainTest.validationCoup("188"));
         assertEquals(true,mainTest.validationCoup("498"));
-        assertEquals(true,mainTest.validationCoup("458"));
+        assertEquals(false,mainTest.validationCoup("458"));
         assertEquals(true,mainTest.validationCoup("838"));
     }
 }

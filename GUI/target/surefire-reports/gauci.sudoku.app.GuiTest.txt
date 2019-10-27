@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: gauci.sudoku.app.GuiTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 s - in gauci.sudoku.app.GuiTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.098 s <<< FAILURE! - in gauci.sudoku.app.GuiTest
+verifClavierTest(gauci.sudoku.app.GuiTest)  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at gauci.sudoku.app.GuiTest.verifClavierTest(GuiTest.java:25)
+
