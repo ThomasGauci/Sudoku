@@ -56,10 +56,8 @@ Ouvrir un terminal et executer:
 4. `cd Main`
 5. `mvn assembly:single`
 6. `cd ..`
-    Lancement du jeu avec une grille ressource 
-7. `java -jar Main/target/SudokuV1.jar`
-    Lancement du jeu avec une grille personnalisée 
-7. `java -jar Main/target/SudokuV1.jar /Users/thomasgauci/Desktop/loadsapropregrille.txt`
+7. `java -jar Main/target/SudokuV1.jar` (Lancement du jeu avec une grille ressource )
+7. `java -jar Main/target/SudokuV1.jar /Users/thomasgauci/Desktop/loadsapropregrille.txt` (Lancement du jeu avec une grille personnalisée )
 -------------------------------------------------------------------------------------
 ## Technologies et méthodes déployées
 
