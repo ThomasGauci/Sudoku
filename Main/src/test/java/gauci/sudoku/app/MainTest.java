@@ -9,43 +9,47 @@ import gauci.sudoku.app.Main;
  * Unit test for simple App.
  */
 public class MainTest 
-{/*
-    private static int grille[][];
+{
+    
+    public static int grille[][];
+    Main mainTest;
 
     @Before
     public final void setUp() {
-        grille = new int[9][9];
+        mainTest = new Main();
+        mainTest.grille = new int[9][9];
     }
 
     @Test
-    public final void ajouterTest(String str){
+    public final void ajouterTest(){
         /*
          * Tests : Les coordonnées sont elles bien ajoutées ?
-         *//*
+         */
         Io io = new Io();
-        grille = io.lire();
+        mainTest.grille = io.lire();
         String strTest ="111";
-        ajouter(strTest);
-        assertEquals(1, grille[0][0]);
+        mainTest.ajouter(strTest);
+        assertEquals(1, mainTest.grille[0][0]);
     }
 
     @Test
-    public final void validationCoupTest(String coup){
+    public final void validationCoupTest(){
         /*
          * Tests : Le coup est il bien vérifié ?
-         *//*
-        grille[0][0]=1;
-        grille[1][6]=3;
+         */
+        mainTest.grille[0][0]=1;
+        mainTest.grille[8][7]=8;
 
-        assertEquals(false,validationCoup("221"));
-        assertEquals(false,validationCoup("161"));
-        assertEquals(false,validationCoup("411"));
-        assertEquals(true,validationCoup("241"));
-        assertEquals(true,validationCoup("161"));
-        assertEquals(false,validationCoup("778"));
-        assertEquals(false,validationCoup("188"));
-        assertEquals(false,validationCoup("498"));
-        assertEquals(true,validationCoup("458"));
-        assertEquals(true,validationCoup("838"));
-    }*/
+        assertEquals(false,mainTest.validationCoup("221"));
+        assertEquals(false,mainTest.validationCoup("161"));
+        assertEquals(false,mainTest.validationCoup("411"));
+        assertEquals(true,mainTest.validationCoup("241"));
+        assertEquals(false,mainTest.validationCoup("161"));
+
+        assertEquals(false,mainTest.validationCoup("778"));
+        assertEquals(false,mainTest.validationCoup("188"));
+        assertEquals(true,mainTest.validationCoup("498"));
+        assertEquals(true,mainTest.validationCoup("458"));
+        assertEquals(true,mainTest.validationCoup("838"));
+    }
 }

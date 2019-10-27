@@ -49,24 +49,21 @@ public class Gui
         String str = scanner.nextLine();
         // mots[0] = exit / help / save / load / 123
         String mots[] = str.split(" ");
-        if(mots[0].equals("help")){
-            System.out.print( "Pour saisir le chiffre 2 sur la ligne 1 colonne 5  tapez : 152  \n" );
-            System.out.print( "Chiffres, lignes et colonnes : 1 à 9 \n " );
-            System.out.print( "Pour sauvegarder une grille : save nomdelagrille \n " );
-            System.out.print( "Pour charger une grille : load /Desktop/grille.txt \n " );
-            return recupClavier();
-        }
-        
-        if(mots[0].equals("exit")){
-            System.exit(0);
-        }
-        if(Pattern.matches("[1-9]{3}", mots[0]) || mots[0].equals("load") || mots[0].equals("save")){
-            return mots;
+        return mots;
+    }
+    public static boolean verifClavier(String mots[]){
+        if(Pattern.matches("[1-9]{3}", mots[0]) || mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help")){
+            return true;
         }else{
-            return recupClavier();
+            return false;
         }
     }
-        
+    public static void help(){
+        System.out.print( "Pour saisir le chiffre 2 sur la ligne 1 colonne 5  tapez : 152  \n" );
+        System.out.print( "Chiffres, lignes et colonnes : 1 à 9 \n " );
+        System.out.print( "Pour sauvegarder une grille : save nomdelagrille \n " );
+        System.out.print( "Pour charger une grille : load /Desktop/grille.txt " );
+    }   
     public static void erreur(){
         System.out.println("Mauvais placement du chiffre");
     }

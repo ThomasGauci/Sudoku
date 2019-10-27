@@ -10,8 +10,7 @@ import java.lang.Math;
 public class Main 
 
 {
-    private static int grille[][];
-    private static int tour;
+    public static int grille[][];
 
     public static void main( String[] args ){
         Gui gui = new Gui();
@@ -55,10 +54,10 @@ public class Main
             }
         }
     }
-    private static void ajouter(String str){
+    public static void ajouter(String str){
         grille[Character.getNumericValue(str.charAt(0))-1][Character.getNumericValue(str.charAt(1))-1]=Character.getNumericValue(str.charAt(2));
     }
-    private static boolean validationCoup(String coup){
+    public static boolean validationCoup(String coup){
         boolean flag = true;
         int row = Character.getNumericValue(coup.charAt(0))-1;
         int col = Character.getNumericValue(coup.charAt(1))-1;
