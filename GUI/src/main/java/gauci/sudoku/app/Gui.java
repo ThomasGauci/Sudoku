@@ -49,7 +49,7 @@ public class Gui
         System.out.print( "\n" );
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-        // mots[0] = exit / help / save / load / 123
+        // mots[0] = exit / help / save / load / 123 / b
         String mots[] = str.split(" ");
         return mots;
     }
@@ -59,7 +59,7 @@ public class Gui
      * @return true si le joueur a écrit une demande valide sinon false
      */
     public static boolean verifClavier(String mots[]){
-        if(Pattern.matches("[1-9]{3}", mots[0]) || mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help")){
+        if(Pattern.matches("[1-9]{3}", mots[0]) || mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help") || mots[0].equals("b")){
             return true;
         }else{
             return false;

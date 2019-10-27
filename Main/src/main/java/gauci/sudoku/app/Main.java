@@ -11,11 +11,15 @@ public class Main
 
 {
     public static int grille[][];
+    public static String coups[];
+    public static int tour;
 
     public static void main( String[] args ) throws FileNotFoundException {
         Gui gui = new Gui();
         Io io = new Io();
         grille = new int[9][9];
+        coups = new String[100];
+        tour = -1;
         String mots[];
         boolean coup;
         if(args.length!=0){
@@ -27,7 +31,7 @@ public class Main
             gui.afficherGrille(grille);
             mots = gui.recupClavier();
             if(gui.verifClavier(mots)){
-                if(mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help")){
+                if(mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help") || mots[0].equals("b")){
                     if(mots[0].equals("save")){
                         io.ecrire(mots[1],grille);
                     }
@@ -40,10 +44,16 @@ public class Main
                     if(mots[0].equals("help")){
                         gui.help();
                     }
+                    if(mots[0].equals("b") && tour>=0){
+                        retirer(coups[tour]);
+                        tour--;
+                    }
                 }else{
                     coup = validationCoup(mots[0]);
                     if(coup){
                         ajouter(mots[0]);
+                        tour++;
+                        coups[tour]=mots[0];
                     }else{
                         gui.erreur();
                     }
@@ -57,6 +67,13 @@ public class Main
      */
     public static void ajouter(String str){
         grille[Character.getNumericValue(str.charAt(0))-1][Character.getNumericValue(str.charAt(1))-1]=Character.getNumericValue(str.charAt(2));
+    }
+    /**
+     * @author Thomas Gauci
+     * @param str les coordonnées et la valeur du coup joué
+     */
+    public static void retirer(String str){
+        grille[Character.getNumericValue(str.charAt(0))-1][Character.getNumericValue(str.charAt(1))-1]=0;
     }
     /**
      * @author Thomas Gauci

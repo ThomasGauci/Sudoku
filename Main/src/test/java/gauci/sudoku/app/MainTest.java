@@ -33,6 +33,21 @@ public class MainTest
     }
 
     @Test
+    public final void retirerTest(){
+        /*
+         * Tests : Les coordonnées sont elles bien retirées ?
+         */
+        Io io = new Io();
+        mainTest.grille = io.lire();
+        String strTest ="111";
+        mainTest.ajouter(strTest);
+        assertEquals(1, mainTest.grille[0][0]);
+        mainTest.retirer(strTest);
+        assertEquals(0, mainTest.grille[0][0]);
+
+    }
+
+    @Test
     public final void validationCoupTest(){
         /*
          * Tests : Le coup est il bien vérifié ?
