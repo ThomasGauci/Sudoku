@@ -8,11 +8,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 /**
- * Hello world! (Grand galllllop)
- *
+ * @author Thomas Gauci
  */
 public class Io 
 {
+  /**
+   * @author Thomas Gauci
+   * @return une grille lu dans les ressources du jeu
+   */
     public static int[][] lire()
     {
       int grille[][] = new int[9][9];
@@ -44,14 +47,16 @@ public class Io
       }
       return grille;
     }
-
+  /**
+   * @author Thomas Gauci
+   * @param path le chemin absolu de la grille
+   * @return une grille donné par le joueur
+   */
     public static int[][] lire(String path)
     {
       int grille[][] = new int[9][9];
       try{
         FileReader file =  new FileReader(path);
-        //InputStream file = Io.class.getResourceAsStream("/grille1.txt");
-        //BufferedReader buff=new BufferedReader(new InputStreamReader(file));
         int nb;
         int col = 0;
         int row  = 0;
@@ -77,7 +82,11 @@ public class Io
       }
       return grille;
     }
-
+  /**
+   * @author Thomas Gauci
+   * @param name le nom de la grille
+   * @param grille la grille en cours de jeu
+   */
     public static void ecrire(String name,int grille[][])
     {
       String content ="";

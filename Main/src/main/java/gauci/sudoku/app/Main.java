@@ -1,10 +1,10 @@
 package gauci.sudoku.app;
 
 import gauci.sudoku.app.Gui;
+import java.io.FileNotFoundException;
 import java.lang.Math;
 /**
- * Hello world!
- *
+ * @author Thomas Gauci
  */
 // clear && mvn install && cd Main && mvn exec:java && cd ..
 public class Main 
@@ -12,14 +12,13 @@ public class Main
 {
     public static int grille[][];
 
-    public static void main( String[] args ){
+    public static void main( String[] args ) throws FileNotFoundException {
         Gui gui = new Gui();
         Io io = new Io();
         grille = new int[9][9];
         String mots[];
         boolean coup;
-
-        if(args[0]!=null){
+        if(args.length!=0){
             grille = io.lire(args[0]);
         }else{
             grille = io.lire();
@@ -30,11 +29,9 @@ public class Main
             if(gui.verifClavier(mots)){
                 if(mots[0].equals("load") || mots[0].equals("save") || mots[0].equals("exit") || mots[0].equals("help")){
                     if(mots[0].equals("save")){
-                        // Ajouter nom de la grille -save grille90
                         io.ecrire(mots[1],grille);
                     }
                     if(mots[0].equals("load")){
-                        // Ajouter nom et chemin  -load /test/pil.txt
                         grille = io.lire(mots[1]);
                     }
                     if(mots[0].equals("exit")){
@@ -54,9 +51,18 @@ public class Main
             }
         }
     }
+    /**
+     * @author Thomas Gauci
+     * @param str les coordonnées et la valeur du coup joué
+     */
     public static void ajouter(String str){
         grille[Character.getNumericValue(str.charAt(0))-1][Character.getNumericValue(str.charAt(1))-1]=Character.getNumericValue(str.charAt(2));
     }
+    /**
+     * @author Thomas Gauci
+     * @param coup les coordonnées et la valeur du coup joué
+     * @return true si le coup peut être joué sinon false
+     */
     public static boolean validationCoup(String coup){
         boolean flag = true;
         int row = Character.getNumericValue(coup.charAt(0))-1;

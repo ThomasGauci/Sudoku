@@ -55,7 +55,10 @@ Ouvrir un terminal et executer:
 2. `cd Sudoku`
 3. `mvn clean install`
 4. `cd Main`
-5. `mvn exec:java`
+5. `mvn assembly:single`
+6. `cd ..`
+7. `java -jar Main/target/SudokuV1.jar`
+7. `java -jar Main/target/SudokuV1.jar /Users/thomasgauci/Desktop/loadsapropregrille.txt`
 -------------------------------------------------------------------------------------
 ## Technologies et méthodes déployées
 
