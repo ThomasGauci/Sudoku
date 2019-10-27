@@ -96,7 +96,7 @@
                           <mainClass>gauci.sudoku.app.Main</mainClass>
                         </manifest>
                       </archive>
-                      <finalName>SudokuV1</finalName>
+                      <finalName>sudokuV1</finalName>
                       <appendAssemblyId>false</appendAssemblyId>
          </configuration>
       </plugin>
