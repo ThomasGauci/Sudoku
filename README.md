@@ -45,7 +45,6 @@ La grille de Sudoku est de taille 9x9 et chaque case peut contenir un chiffre en
 
 Dans cette branche se trouvera une version du jeu permettant de revenir en arrière. Il devra être possible d'annuler les coups avec la commande 'b' (back). Chaque commande  annulera le dernier coup joué. Tous les coups joués depuis le début de la partie devront pouvoir être annulés.
 
-/////// A MODIFER
 -------------------------------------------------------------------------------------
 ## Usage
 
@@ -57,7 +56,9 @@ Ouvrir un terminal et executer:
 4. `cd Main`
 5. `mvn assembly:single`
 6. `cd ..`
+    Lancement du jeu avec une grille ressource 
 7. `java -jar Main/target/SudokuV1.jar`
+    Lancement du jeu avec une grille personnalisée 
 7. `java -jar Main/target/SudokuV1.jar /Users/thomasgauci/Desktop/loadsapropregrille.txt`
 -------------------------------------------------------------------------------------
 ## Technologies et méthodes déployées
