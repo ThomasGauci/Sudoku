@@ -23,7 +23,7 @@ public class Gui
     public static final void afficherGrille(int grille[][]){
         IRender render = new Render();
 		IContextBuilder builder = render.newBuilder();
-		builder.width(30).height(30);
+		builder.width(28).height(19);
         Table table = new Table(9,9);
 
         for(int j=0 ; j<9; j++){
