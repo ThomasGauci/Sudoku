@@ -4,7 +4,7 @@
 Le but de ce projet est de développer un jeu de Sudoku en mode texte, en utilisant Maven, GIT et JUnit.
 
 ## GIT
-
+ 
 Toute la gestion du code source se fait à travers GIT, en utilisant le dépot associé
 à la classroom GitHub. Les commits doivent se faire régulièrement et contenir un
 message de commit pertinent.
